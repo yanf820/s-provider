@@ -15,7 +15,7 @@
 	<dubbo:application name="provider" owner="s-provider" organization="startup-saas" />
 
 	<!-- zookeeper 地址 -->
-	<dubbo:registry address="zookeeper://10.1.34.216:2181" />
+	<dubbo:registry address="zookeeper://192.168.110.128:2181" />
 
 	<!-- rest api 配置 -->
     <dubbo:protocol name="rest" server="servlet" port="8102" contextpath="/saasApi"/>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+	<context id="XiuHaoLe_Tables" targetRuntime="MyBatis3">
+		<property name="javaFileEncoding" value="utf-8" />
+
+		<!-- pagination plugin -->
+		<!--<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />-->
+		<!--<plugin type="org.mybatis.generator.plugin.PaginationMysqlPlugin" />-->
+		<!--<plugin type="org.mybatis.generator.plugin.CommentPlugin" />-->
+
+		<commentGenerator>
+			<!-- 不生成注解信息 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+						connectionURL="jdbc:mysql://10.1.34.216/saas"
+						userId="root"
+						password="hadoop" />
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- generate Model -->
+		<javaModelGenerator targetPackage="com.startup.saas.storage.model" targetProject="src/main/java" />
+
+		<!-- generate xml -->
+		<sqlMapGenerator targetPackage="mybatis" targetProject="src/main/resources/META-INF" />
+
+		<!-- generate Mapper -->
+		<javaClientGenerator targetPackage="com.startup.saas.storage.mapper" targetProject="src/main/java" type="XMLMAPPER" />
+
+		<table tableName="s_topic" domainObjectName="TopicPO">
+			<generatedKey column="id" sqlStatement="MySQL" identity="true" />
+		</table>
+
+		<table tableName="s_topic_posts" domainObjectName="PostPO">
+			<generatedKey column="id" sqlStatement="MySQL" identity="true" />
+		</table>
+
+		<table tableName="s_posts_comment" domainObjectName="CommentPO">
+			<generatedKey column="id" sqlStatement="MySQL" identity="true" />
+		</table>
+
+		<table tableName="s_posts_favorite" domainObjectName="PostFavoritePO">
+			<generatedKey column="id" sqlStatement="MySQL" identity="true" />
+		</table>
+
+		<table tableName="s_posts_likes" domainObjectName="PostLikesPO">
+			<generatedKey column="id" sqlStatement="MySQL" identity="true" />
+		</table>
+
+		<table tableName="s_topic_brand" domainObjectName="TopicBrandPO">
+			<generatedKey column="topic_id" sqlStatement="MySQL" identity="true" />
+		</table>
+
+		<table tableName="s_user" domainObjectName="UserPO">
+			<generatedKey column="id" sqlStatement="MySQL" identity="true" />
+		</table>
+
+		<table tableName="s_user_brand" domainObjectName="UserBrandPO">
+			<generatedKey column="user_id" sqlStatement="MySQL" identity="true" />
+		</table>
+
+		<table tableName="s_user_topic" domainObjectName="UserTopicPO">
+			<generatedKey column="user_id" sqlStatement="MySQL" identity="true" />
+		</table>
+
+		<table tableName="s_user_follower" domainObjectName="UserFollowerPO">
+			<generatedKey column="user_id" sqlStatement="MySQL" identity="true" />
+		</table>
+
+
+	</context>
+
+</generatorConfiguration>
